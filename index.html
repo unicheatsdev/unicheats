@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNICHEATS | UNIVERSAL EXPLOIT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap');
+        body { background-color: #050505; color: #e5e5e5; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .glow { text-shadow: 0 0 15px rgba(220, 38, 38, 0.8); }
+        .btn-glow:hover { box-shadow: 0 0 30px rgba(220, 38, 38, 0.6); transform: scale(1.05); }
+        .border-glow { border: 1px solid rgba(220, 38, 38, 0.2); transition: all 0.3s ease; }
+        .border-glow:hover { border-color: #dc2626; background: rgba(220, 38, 38, 0.05); }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="max-w-3xl text-center space-y-10">
+        <div class="space-y-2">
+            <h1 class="text-7xl font-black tracking-tighter italic glow text-red-600">UNICHEATS</h1>
+            <p class="text-xl text-gray-400 font-light tracking-widest uppercase">The Final Solution for Modern Gaming</p>
+        </div>
+
+        <p class="text-lg text-gray-300 max-w-xl mx-auto leading-relaxed">
+            A universal binary exploit engineered for 99% of modern titles. 
+            <span class="text-red-500 font-bold italic">ROBLOX, R6, FORTNITE, VALORANT</span> & more.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-mono tracking-tighter">
+            <div class="border-glow p-6 rounded bg-black/40"> [ VISUALS / ESP ] </div>
+            <div class="border-glow p-6 rounded bg-black/40"> [ PRECISION / AIM ] </div>
+            <div class="border-glow p-6 rounded bg-black/40"> [ STEALTH / BYPASS ] </div>
+        </div>
+
+        <div class="py-6 space-y-6">
+            <a href="https://www.mediafire.com/file/xcmb3xr06khybk9/free_version.zip/file" 
+               class="btn-glow inline-block bg-red-600 text-white px-16 py-5 rounded-full font-black text-2xl transition-all">
+                DOWNLOAD FREE VERSION
+            </a>
+            <div class="flex items-center justify-center space-x-2">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                <p class="text-sm text-green-500 font-bold uppercase tracking-widest">Status: Undetected [2.0.26]</p>
+            </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-900 w-full max-w-md mx-auto">
+            <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-6 font-bold">Verified User Feedback</p>
+            <div class="text-sm italic text-gray-500 space-y-4">
+                <p class="hover:text-gray-300 transition-colors">"Finally a bypass that actually works for R6. 10/10." - <span class="text-red-600 font-bold">v0id_</span></p>
+                <p class="hover:text-gray-300 transition-colors">"Valorant ESP is clean as hell. Best free loader." - <span class="text-red-600 font-bold">KillaCam</span></p>
+                <p class="hover:text-gray-300 transition-colors">"Works on Roblox without any crashes." - <span class="text-red-600 font-bold">BloxHax</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="fixed bottom-6 right-6 bg-zinc-900 border border-red-600 p-4 rounded-lg shadow-2xl text-xs transition-all duration-500 opacity-0 translate-y-10">
+        <div class="flex items-center space-x-3">
+            <div class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
+            <span id="notif-text" class="font-mono"></span>
+        </div>
+    </div>
+
+    <script>
+        const names = ['User182', 'X_R6_Killer', 'VoidWalker', 'CheatGod', 'R3al_Ghost', 'Slayer99'];
+        function showNotif() {
+            const notif = document.getElementById('notification');
+            document.getElementById('notif-text').innerText = names[Math.floor(Math.random()*names.length)] + " just downloaded UNICHEATS.";
+            notif.classList.remove('opacity-0', 'translate-y-10');
+            notif.classList.add('opacity-100', 'translate-y-0');
+            setTimeout(() => { 
+                notif.classList.add('opacity-0', 'translate-y-10');
+                notif.classList.remove('opacity-100', 'translate-y-0');
+            }, 4000);
+        }
+        setInterval(showNotif, 10000);
+    </script>
+</body>
+</html>
