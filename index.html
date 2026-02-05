@@ -3,128 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNICHEATS | UNIVERSAL</title>
+    <title>UNICHEATS | THE UNIVERSAL STANDARD</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;800&display=swap');
+        
+        :root { --accent: #ff0000; }
         body { 
-            background-color: #010101; 
-            color: #e5e5e5; 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden;
+            background-color: #000; color: #fff; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            overflow-x: hidden; min-height: 100vh;
         }
-        /* Cursor Following Glow */
-        #cursor-glow {
-            position: fixed;
-            top: 0; left: 0;
-            width: 700px; height: 700px;
-            background: radial-gradient(circle, rgba(220, 38, 38, 0.12) 0%, transparent 75%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
-            transform: translate(-50%, -50%);
+
+        /* Xeno-Style Smooth Cursor Glow */
+        #glow {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(255, 0, 0, 0.12) 0%, transparent 60%);
+            z-index: 0; pointer-events: none; will-change: transform;
         }
-        .glow { text-shadow: 0 0 30px rgba(220, 38, 38, 1); }
-        .btn-glow:hover { box-shadow: 0 0 60px rgba(220, 38, 38, 0.8); transform: scale(1.05); }
-        .border-glow { border: 1px solid rgba(255, 255, 255, 0.03); transition: all 0.3s ease; }
-        .border-glow:hover { border-color: #dc2626; background: rgba(220, 38, 38, 0.05); }
+
+        /* Glassmorphism from Xeno Source */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover { 
+            border-color: rgba(255, 0, 0, 0.4); 
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .btn-xeno {
+            background: #fff; color: #000;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.2);
+        }
+        .btn-xeno:hover { 
+            transform: scale(1.02); 
+            box-shadow: 0 0 60px rgba(255, 0, 0, 0.5); 
+        }
+
+        .nav-link {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+            color: #a1a1aa; transition: color 0.2s;
+        }
+        .nav-link:hover { color: #fff; }
+
+        @keyframes subtle-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .pulse-dot { width: 8px; height: 8px; border-radius: 50%; }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-6">
+<body class="flex flex-col items-center p-6 lg:p-12">
 
-    <div id="cursor-glow"></div>
+    <div id="glow"></div>
 
-    <div class="max-w-5xl w-full text-center space-y-12 relative z-10">
-        
-        <div class="flex justify-between items-center w-full max-w-3xl mx-auto border-b border-zinc-900 pb-4">
-            <div class="flex space-x-8 text-[10px] font-black tracking-[0.3em] uppercase">
-                <a href="#" class="text-red-600">Home</a>
-                <a href="javascript:void(0)" onclick="alert('Showcase module encrypting...')" class="hover:text-red-500 transition-colors">Showcase</a>
-                <a href="javascript:void(0)" onclick="alert('Pricing: Universal License Active.')" class="hover:text-red-500 transition-colors">Pricing</a>
-            </div>
-            <div class="text-[9px] bg-red-950/20 border border-red-900/40 px-4 py-1 rounded text-red-500 font-bold uppercase tracking-widest">
-                Discord: System Rework
-            </div>
+    <nav class="w-full max-w-5xl flex justify-between items-center py-6 px-8 glass-card mb-20 relative z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-red-600 rounded-lg rotate-12 flex items-center justify-center font-black italic">UC</div>
+            <span class="font-extrabold tracking-tighter text-xl">UNICHEATS</span>
         </div>
-
-        <div class="space-y-2">
-            <h1 class="text-9xl md:text-[13rem] font-black tracking-tighter italic glow text-red-600 uppercase leading-none select-none">UNICHEATS</h1>
-            <p class="text-[11px] text-zinc-500 font-bold tracking-[1em] uppercase">90% GLOBAL TITLE COMPATIBILITY</p>
+        <div class="hidden md:flex space-x-12 uppercase">
+            <a href="#" class="nav-link">Framework</a>
+            <a href="#" class="nav-link">Showcase</a>
+            <a href="#" class="nav-link">Status</a>
         </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl mx-auto font-mono text-[9px] uppercase">
-            <div class="bg-black/60 border border-zinc-900 p-2 rounded flex justify-between px-3"><span>R6S</span> <span class="text-green-500">✔</span></div>
-            <div class="bg-black/60 border border-zinc-900 p-2 rounded flex justify-between px-3"><span>FORTNITE</span> <span class="text-green-500">✔</span></div>
-            <div class="bg-black/60 border border-zinc-900 p-2 rounded flex justify-between px-3"><span>ROBLOX</span> <span class="text-green-500">✔</span></div>
-            <div class="bg-black/60 border border-zinc-900 p-2 rounded flex justify-between px-3"><span>COD / WZ</span> <span class="text-green-500">✔</span></div>
-            <div class="bg-black/60 border border-zinc-900 p-2 rounded flex justify-between px-3"><span>UNTURNED</span> <span class="text-green-500">✔</span></div>
-            <div class="bg-black/60 border border-zinc-900 p-2 rounded flex justify-between px-3"><span>DAYZ</span> <span class="text-green-500">✔</span></div>
-            
-            <div class="bg-zinc-900/40 border border-red-900/40 p-2 rounded flex justify-between px-3 opacity-60">
-                <span class="text-zinc-500">EFT (TARKOV)</span> <span class="text-red-600">⚠ DETECTED</span>
-            </div>
-            <div class="bg-zinc-900/40 border border-red-900/40 p-2 rounded flex justify-between px-3 opacity-60">
-                <span class="text-zinc-500">THE CYCLE</span> <span class="text-red-600">OFFLINE</span>
-            </div>
-            
-            <div class="col-span-2 md:col-span-4 text-center pt-2 italic text-zinc-600 text-[8px] tracking-widest">
-                * ENGINE SUPPORTS 150+ OTHER MODERN TITLES VIA KERNEL EMULATION *
-            </div>
-        </div>
-
-        <div class="w-full max-w-lg mx-auto bg-black/95 border-l-2 border-red-600 p-4 font-mono text-[10px] text-zinc-500 text-left shadow-2xl">
-            <div id="terminal-content" class="h-16 overflow-hidden leading-relaxed">
-                <span class="text-red-900 font-bold">> UNIVERSAL ENGINE V2.0.26 ONLINE</span><br>
-                > Bypassing global AC signatures...
-            </div>
-        </div>
-
-        <div class="py-6">
-            <button id="dl-btn" onclick="startDownload()" class="btn-glow bg-red-600 text-white px-36 py-9 rounded-none font-black text-4xl transition-all skew-x-[-12deg]">
-               <span class="inline-block skew-x-[12deg]">DOWNLOAD BUNDLE</span>
+        <div class="group relative">
+            <button class="glass-card px-5 py-2 text-[10px] font-bold border-zinc-800 hover:border-red-600 transition-all">
+                DISCORD <span class="text-zinc-600 ml-1">●</span>
             </button>
-            <div class="mt-6 flex items-center justify-center space-x-3 text-[10px] font-bold uppercase tracking-[0.2em]">
-                <span class="text-zinc-600">Primary Targets:</span>
-                <span class="text-zinc-400">BE, EAC, RICHOCHET, MRAC, NEXON</span>
+            <div class="absolute -bottom-10 right-0 opacity-0 group-hover:opacity-100 transition-all bg-red-600 text-[9px] px-3 py-1.5 rounded-lg whitespace-nowrap font-black uppercase tracking-tighter shadow-xl">
+                SYSTEM: MAINTENANCE
             </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 w-full max-w-5xl text-center space-y-12">
+        <div class="space-y-4">
+            <h1 class="text-7xl md:text-[130px] font-extrabold tracking-tighter leading-none">
+                DOMINANCE<span class="text-red-600">.</span>
+            </h1>
+            <p class="text-zinc-400 max-w-2xl mx-auto text-xl font-light tracking-tight">
+                An all-in-one kernel framework providing <span class="text-white italic">undetectable access</span> to 
+                90% of modern competitive titles.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+            <div class="glass-card p-8 text-left space-y-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-[10px] uppercase font-black tracking-widest text-zinc-500">Tier 1 Titles</span>
+                    <div class="flex items-center text-[10px] text-green-500 font-bold">
+                        <span class="pulse-dot bg-green-500 mr-2 animate-pulse"></span> ONLINE
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm font-medium">
+                    <p class="flex justify-between"><span>R6: Siege</span> <span class="text-zinc-500">Undetected</span></p>
+                    <p class="flex justify-between"><span>Fortnite</span> <span class="text-zinc-500">Undetected</span></p>
+                    <p class="flex justify-between"><span>Roblox</span> <span class="text-zinc-500">Undetected</span></p>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 text-left space-y-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-[10px] uppercase font-black tracking-widest text-zinc-500">Simulators/Niche</span>
+                    <div class="flex items-center text-[10px] text-green-500 font-bold">
+                        <span class="pulse-dot bg-green-500 mr-2 animate-pulse"></span> ONLINE
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm font-medium">
+                    <p class="flex justify-between"><span>DayZ / Unturned</span> <span class="text-zinc-500">Undetected</span></p>
+                    <p class="flex justify-between"><span>FiveM / Rust</span> <span class="text-zinc-500">Undetected</span></p>
+                    <p class="flex justify-between"><span>CS2 / Warzone</span> <span class="text-zinc-500">Undetected</span></p>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 text-left space-y-4 opacity-50 border-red-900/30">
+                <div class="flex justify-between items-center">
+                    <span class="text-[10px] uppercase font-black tracking-widest text-red-900">Maintenance</span>
+                    <div class="flex items-center text-[10px] text-red-600 font-bold">
+                        <span class="pulse-dot bg-red-600 mr-2 animate-pulse"></span> OFFLINE
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm font-medium italic">
+                    <p class="flex justify-between"><span>The Cycle</span> <span class="text-zinc-600">Patching</span></p>
+                    <p class="flex justify-between"><span>Escape from Tarkov</span> <span class="text-zinc-600">Detected</span></p>
+                    <p class="flex justify-between"><span>Bloodhunt</span> <span class="text-zinc-600">Unsupported</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center py-12">
+            <button onclick="triggerDownload()" class="btn-xeno px-20 py-6 font-black text-sm uppercase tracking-[0.2em]">
+                Acquire Framework
+            </button>
+            <div class="mt-8 flex gap-12 text-zinc-600 font-bold text-[9px] uppercase tracking-widest opacity-40">
+                <span>EAC Bypass</span>
+                <span>BE Bypass</span>
+                <span>Vanguard (VM)</span>
+                <span>Richochet</span>
+            </div>
+        </div>
+    </main>
+
+    <div id="loading-overlay" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center backdrop-blur-3xl">
+        <div class="text-center space-y-8 glass-card p-12 border-zinc-800">
+            <div class="w-16 h-1 bg-zinc-800 mx-auto rounded-full overflow-hidden">
+                <div class="h-full bg-red-600 w-1/3 animate-[loading_2s_infinite]"></div>
+            </div>
+            <p class="text-[11px] tracking-[0.5em] text-white uppercase font-black" id="loading-text">Requesting HWID Signature...</p>
         </div>
     </div>
 
-    <div id="dl-popup" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-950 border border-red-600 p-10 rounded shadow-[0_0_150px_rgba(220,38,38,0.3)] z-[100] hidden text-center">
-        <div class="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
-        <p class="font-mono text-[11px] text-white uppercase tracking-[0.4em]" id="popup-text">Connecting...</p>
-    </div>
+    <style>
+        @keyframes loading { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
+    </style>
 
     <script>
-        // Cursor Follow Logic (Smooth & Heavy)
-        const glow = document.getElementById('cursor-glow');
+        // Smooth Cursor Follower (Xeno Implementation)
+        const glow = document.getElementById('glow');
+        let mX = 50, mY = 50;
+        let cX = 50, cY = 50;
+
         document.addEventListener('mousemove', (e) => {
-            glow.style.transform = `translate(${e.clientX - 350}px, ${e.clientY - 350}px)`;
+            mX = (e.clientX / window.innerWidth) * 100;
+            mY = (e.clientY / window.innerHeight) * 100;
         });
 
-        // Terminal Log
-        const term = document.getElementById('terminal-content');
-        const logs = ["> Scanning 150+ titles...", "> Tarkov module: [PATCHING]", "> R6S/Fortnite: [SECURE]", "> Generating HWID Spoofer...", "> Overlays: [STREAM_PROOF]"];
-        let j = 0;
-        setInterval(() => {
-            term.innerHTML += `<br>> ${logs[j % logs.length]}`;
-            j++;
-            if(j > 3) term.innerHTML = term.innerHTML.split('<br>').slice(1).join('<br>');
-        }, 3000);
+        function step() {
+            cX += (mX - cX) * 0.05; // Even slower for that "luxury" feel
+            cY += (mY - cY) * 0.05;
+            glow.style.setProperty('--x', `${cX}%`);
+            glow.style.setProperty('--y', `${cY}%`);
+            requestAnimationFrame(step);
+        }
+        step();
 
-        // Download Sequence
-        function startDownload() {
-            const btn = document.getElementById('dl-btn');
-            const popup = document.getElementById('dl-popup');
-            const pText = document.getElementById('popup-text');
-            btn.disabled = true; btn.classList.add('opacity-30'); popup.classList.remove('hidden');
-            setTimeout(() => { pText.innerText = "Syncing build signatures..."; }, 1000);
-            setTimeout(() => { pText.innerText = "Bypassing server-side check..."; }, 2200);
+        // Download Logic
+        function triggerDownload() {
+            const overlay = document.getElementById('loading-overlay');
+            const txt = document.getElementById('loading-text');
+            overlay.classList.remove('hidden');
+            
+            setTimeout(() => { txt.innerText = "Encrypting Download Stream..."; }, 1200);
             setTimeout(() => { 
                 window.location.href = "https://www.mediafire.com/file/zfwj55ksjb0psr6/unicheats-2.0.26.zip/file";
-                popup.classList.add('hidden');
-            }, 3500);
+                overlay.classList.add('hidden');
+            }, 3000);
         }
     </script>
 </body>
