@@ -3,141 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNICHEATS | THE ULTIMATE EXPLOIT</title>
+    <title>UNICHEATS | ELITE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap');
-        body { background-color: #050505; color: #e5e5e5; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { 
+            background-color: #030303; 
+            color: #e5e5e5; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+        #bg-grain {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(220, 38, 38, 0.05) 0%, transparent 70%);
+            z-index: -1; transition: transform 0.1s ease-out;
+        }
         .glow { text-shadow: 0 0 20px rgba(220, 38, 38, 1); }
-        .btn-glow:hover { box-shadow: 0 0 50px rgba(220, 38, 38, 0.8); transform: scale(1.05); }
-        .border-glow { border: 1px solid rgba(220, 38, 38, 0.2); transition: all 0.3s ease; }
-        .border-glow:hover { border-color: #dc2626; background: rgba(220, 38, 38, 0.08); }
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { background: #dc2626; }
+        .btn-glow:hover { box-shadow: 0 0 50px rgba(220, 38, 38, 0.8); transform: scale(1.05) translateY(-2px); }
+        .border-glow { border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease; }
+        .border-glow:hover { border-color: #dc2626; background: rgba(220, 38, 38, 0.05); }
+        
+        /* Floating Animation */
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-6">
+<body class="flex flex-col items-center justify-center min-h-screen p-6 overflow-hidden">
 
-    <div class="max-w-3xl text-center space-y-8 relative">
+    <div id="bg-grain"></div>
+
+    <div class="max-w-4xl text-center space-y-10 relative z-10 animate-float">
         
-        <div class="flex items-center justify-center space-x-2 mb-2 text-[10px] uppercase tracking-[0.4em] text-zinc-500 font-black">
-            <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]"></span>
-            <span><span id="user-count">842</span> SESSIONS ACTIVE</span>
-        </div>
-
-        <div class="space-y-2">
-            <h1 class="text-8xl md:text-9xl font-black tracking-tighter italic glow text-red-600 uppercase">UNICHEATS</h1>
-            <p class="text-[10px] text-zinc-500 font-light tracking-[0.7em] uppercase">Multi-Kernel Level Exploitation</p>
-        </div>
-
-        <div class="w-full max-w-sm mx-auto bg-black/80 border border-zinc-800 p-3 font-mono text-[10px] text-green-500/80 text-left rounded shadow-2xl">
-            <div class="flex justify-between border-b border-zinc-900 mb-2 pb-1 text-[8px] text-zinc-600 uppercase font-bold">
-                <span>Network_Status: Encrypted</span>
-                <span>Bypass: Active</span>
-            </div>
-            <div id="terminal-content" class="h-16 overflow-hidden leading-relaxed">
-                > Initializing global bypass...<br>
-                > Hooking kernel-level drivers... [OK]<br>
-                > Spoofing hardware identifiers... [DONE]
+        <div class="space-y-4">
+            <h1 class="text-8xl md:text-[10rem] font-black tracking-tighter italic glow text-red-600 uppercase leading-none">UNICHEATS</h1>
+            <div class="flex items-center justify-center space-x-4">
+                <span class="h-[1px] w-12 bg-zinc-800"></span>
+                <p class="text-[10px] text-zinc-500 font-bold tracking-[0.8em] uppercase">Private External Framework</p>
+                <span class="h-[1px] w-12 bg-zinc-800"></span>
             </div>
         </div>
 
-        <p class="text-md text-zinc-400 max-w-lg mx-auto leading-relaxed font-light">
-            The final solution for modern gaming. Dominate <span class="text-red-500 font-bold italic">R6, ROBLOX, & FORTNITE</span> with the world's most advanced external binary.
-        </p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-[10px] font-mono tracking-tighter uppercase font-bold">
-            <div class="border-glow p-4 rounded bg-zinc-900/40"> [ VISUALS / ESP ] </div>
-            <div class="border-glow p-4 rounded bg-zinc-900/40"> [ PRECISION / AIM ] </div>
-            <div class="border-glow p-4 rounded bg-zinc-900/40"> [ STEALTH / HWID ] </div>
+        <div class="w-full max-w-md mx-auto bg-black/90 border border-zinc-800 p-4 font-mono text-[10px] text-zinc-500 text-left rounded-sm shadow-2xl">
+            <div id="terminal-content" class="h-20 overflow-hidden leading-relaxed">
+                <span class="text-red-600">> System Ready.</span><br>
+                > Awaiting user interaction...
+            </div>
         </div>
 
-        <div class="py-4 space-y-6">
-            <a href="https://www.mediafire.com/file/zfwj55ksjb0psr6/unicheats-2.0.26.zip/file" 
-               class="btn-glow inline-block bg-red-600 text-white px-24 py-6 rounded-none font-black text-3xl transition-all skew-x-[-10deg]">
-               <span class="inline-block skew-x-[10deg]">DOWNLOAD NOW</span>
-            </a>
-            <div class="space-y-2">
-                <div class="flex items-center justify-center space-x-2">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <p class="text-[10px] text-green-500 font-black uppercase tracking-widest">v2.0.26 - STATUS: UNDETECTED</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-[10px] font-mono tracking-tighter uppercase font-bold opacity-80">
+            <div class="border-glow p-5 rounded bg-zinc-900/20"> [ VISUALS / ESP ] </div>
+            <div class="border-glow p-5 rounded bg-zinc-900/20"> [ PRECISION / AIM ] </div>
+            <div class="border-glow p-5 rounded bg-zinc-900/20"> [ KERNEL / RING0 ] </div>
+        </div>
+
+        <div class="py-4 relative">
+            <button id="dl-btn" onclick="startDownload()" class="btn-glow bg-red-600 text-white px-28 py-7 rounded-none font-black text-3xl transition-all skew-x-[-10deg]">
+               <span class="inline-block skew-x-[10deg]">GET ACCESS</span>
+            </button>
+            
+            <div id="status-box" class="mt-6 flex flex-col items-center justify-center space-y-2 opacity-100 transition-opacity">
+                <div class="flex items-center space-x-2">
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                    <p class="text-[10px] text-green-500 font-black uppercase tracking-widest">Live Status: Undetected</p>
                 </div>
-                <p class="text-[9px] text-zinc-600 italic uppercase tracking-tighter">Disable antivirus protection before execution. obfuscation may trigger false flags.</p>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-8 border-t border-zinc-900 w-full">
-            <div class="text-left space-y-2">
-                <h3 class="text-[10px] font-black uppercase text-red-600 tracking-widest">Recent Logs</h3>
-                <ul class="text-[9px] text-zinc-500 font-mono space-y-1">
-                    <li>+ Added EAC Stealth Layer</li>
-                    <li>+ Optimized Aim-Smoothing</li>
-                    <li>+ Fixed Windows 11 23H2 Crash</li>
-                </ul>
+        <div class="mt-12 pt-8 border-t border-zinc-900/50 w-full max-w-2xl mx-auto flex justify-between text-left">
+            <div class="space-y-4">
+                <p class="text-[11px] italic text-zinc-500">"Finally a decent bypass for the new update. 10/10."<br><span class="text-red-800 font-bold not-italic">— @dxrk_void</span></p>
+                <p class="text-[11px] italic text-zinc-500">"Roblox injection is instant. No lag."<br><span class="text-red-800 font-bold not-italic">— kanyes_left_shoe</span></p>
             </div>
-            <div class="text-right space-y-2">
-                <h3 class="text-[10px] font-black uppercase text-zinc-600 tracking-widest">User Feedback</h3>
-                <p class="text-[10px] italic text-zinc-400">"Cleanest R6 ESP I've ever used." - <span class="text-red-600">v0id_xX</span></p>
-                <p class="text-[10px] italic text-zinc-400">"Undetected for 3 months straight." - <span class="text-red-600">gg.zyz</span></p>
+            <div class="text-right space-y-4">
+                <p class="text-[11px] italic text-zinc-500 font-mono">Build: 2.0.26<br>Last Update: Today<br>Downloads: 4.1k</p>
             </div>
         </div>
     </div>
 
-    <div id="notification" class="fixed bottom-8 left-8 bg-zinc-900/90 border-l-4 border-red-600 p-5 rounded-r text-[11px] transition-all duration-700 opacity-0 -translate-x-20 z-50 shadow-2xl">
-        <div class="flex items-center space-x-4">
-            <div class="flex flex-col">
-                <span class="text-red-600 font-black uppercase text-[9px]">New Download</span>
-                <span id="notif-text" class="font-mono text-zinc-300"></span>
-            </div>
+    <div id="dl-popup" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-900 border border-red-600 p-6 rounded shadow-[0_0_50px_rgba(0,0,0,1)] z-[100] hidden">
+        <div class="flex flex-col items-center space-y-4">
+            <div class="w-8 h-8 border-2 border-red-600 border-t-transparent rounded-full animate-spin"></div>
+            <p class="font-mono text-[10px] text-white uppercase tracking-widest" id="popup-text">Fetching secure link...</p>
         </div>
+    </div>
+
+    <div id="notification" class="fixed bottom-8 left-8 bg-zinc-900/90 border-l-2 border-red-600 p-4 text-[10px] transition-all duration-500 opacity-0 -translate-x-10 z-50">
+        <span id="notif-text" class="font-mono text-zinc-400"></span>
     </div>
 
     <script>
-        // Terminal Script
-        const logs = [
-            "> Bypassing BattlEye signatures...",
-            "> Spoofing Disk Serial Numbers...",
-            "> Injecting Memory Buffer...",
-            "> Clearing system trace logs...",
-            "> Refreshing session token...",
-            "> HWID Masking active...",
-            "> Kernel-level hook successful.",
-            "> Encrypting binary stream..."
-        ];
-        let logIdx = 0;
-        setInterval(() => {
-            const term = document.getElementById('terminal-content');
-            term.innerHTML += `<br>> ${logs[logIdx % logs.length]}`;
-            logIdx++;
-            if(logIdx > 4) {
-                term.innerHTML = term.innerHTML.split('<br>').slice(1).join('<br>');
-            }
-        }, 3000);
+        // Parallax Effect
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            document.getElementById('bg-grain').style.transform = `translate(${moveX}px, ${moveY}px) scale(1.1)`;
+        });
 
-        // Notification Script
-        const names = ['User_882', 'xX_Slayer_Xx', 'Anonymous', 'Kozak_Live', 'vrai4312', 'F$layer43', 'Alpha_Bot', 'Shadow_User'];
-        function showNotif() {
+        // Dynamic Terminal Script
+        const term = document.getElementById('terminal-content');
+        const startupLogs = [
+            "> Establishing P2P Encrypted Tunnel...",
+            "> Fetching server-side offsets...",
+            "> Global Bypass Status: [ACTIVE]",
+            "> Awaiting Authorization..."
+        ];
+        let i = 0;
+        function typeLog() {
+            if(i < startupLogs.length) {
+                term.innerHTML += `<br><span class="text-zinc-600">${startupLogs[i]}</span>`;
+                i++;
+                setTimeout(typeLog, 1500);
+            }
+        }
+        window.onload = typeLog;
+
+        // Realistic Download Sequence
+        function startDownload() {
+            const btn = document.getElementById('dl-btn');
+            const popup = document.getElementById('dl-popup');
+            const pText = document.getElementById('popup-text');
+            
+            btn.disabled = true;
+            btn.style.opacity = "0.5";
+            popup.classList.remove('hidden');
+            
+            setTimeout(() => { pText.innerText = "Verifying HWID signatures..."; }, 1200);
+            setTimeout(() => { pText.innerText = "Generating undetected binary..."; }, 2400);
+            setTimeout(() => { 
+                window.location.href = "https://www.mediafire.com/file/zfwj55ksjb0psr6/unicheats-2.0.26.zip/file";
+                popup.classList.add('hidden');
+            }, 3500);
+        }
+
+        // Realistic Notification Names
+        const names = ['z9_vibe', 'ShadowWalker', 'krypt_0', 'nexus_user', 'dev_null', 'void.exe', 'reaper_v3'];
+        setInterval(() => {
             const notif = document.getElementById('notification');
-            document.getElementById('notif-text').innerText = names[Math.floor(Math.random()*names.length)] + " acquired UNICHEATS";
-            notif.classList.remove('opacity-0', '-translate-x-20');
+            document.getElementById('notif-text').innerText = "✓ " + names[Math.floor(Math.random()*names.length)] + " started download";
+            notif.classList.remove('opacity-0', '-translate-x-10');
             notif.classList.add('opacity-100', 'translate-x-0');
             setTimeout(() => { 
-                notif.classList.add('opacity-0', '-translate-x-20');
+                notif.classList.add('opacity-0', '-translate-x-10');
                 notif.classList.remove('opacity-100', 'translate-x-0');
-            }, 4000);
-        }
-        setInterval(showNotif, 12000);
-
-        // Counter Script
-        setInterval(() => {
-            const count = document.getElementById('user-count');
-            let current = parseInt(count.innerText);
-            count.innerText = current + (Math.random() > 0.5 ? 1 : -1);
-        }, 4000);
+            }, 3000);
+        }, 10000);
     </script>
 </body>
 </html>
