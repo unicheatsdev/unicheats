@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNICHEATS | THE UNIVERSAL STANDARD</title>
+    <title>UNICHEATS | UNIVERSAL DOMINANCE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;800&display=swap');
@@ -18,152 +18,147 @@
         /* Xeno-Style Smooth Cursor Glow */
         #glow {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: radial-gradient(circle at var(--x) var(--y), rgba(255, 0, 0, 0.12) 0%, transparent 60%);
+            background: radial-gradient(circle at var(--x) var(--y), rgba(255, 0, 0, 0.15) 0%, transparent 60%);
             z-index: 0; pointer-events: none; will-change: transform;
         }
 
-        /* Glassmorphism from Xeno Source */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .glass-card:hover { 
-            border-color: rgba(255, 0, 0, 0.4); 
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-4px);
-        }
+        .glass-card:hover { border-color: rgba(255, 0, 0, 0.4); background: rgba(255, 255, 255, 0.04); }
 
-        .btn-xeno {
+        .btn-main {
             background: #fff; color: #000;
-            border-radius: 9999px;
+            border-radius: 12px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 40px rgba(255, 0, 0, 0.2);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
         }
-        .btn-xeno:hover { 
-            transform: scale(1.02); 
-            box-shadow: 0 0 60px rgba(255, 0, 0, 0.5); 
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(255, 0, 0, 0.5); }
+
+        .title-glow {
+            text-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
+            letter-spacing: -0.05em;
         }
 
-        .nav-link {
-            font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
-            color: #a1a1aa; transition: color 0.2s;
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
-        .nav-link:hover { color: #fff; }
-
-        @keyframes subtle-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-        .pulse-dot { width: 8px; height: 8px; border-radius: 50%; }
+        .animate-marquee { display: flex; animation: marquee 30s linear infinite; }
     </style>
 </head>
 <body class="flex flex-col items-center p-6 lg:p-12">
 
     <div id="glow"></div>
 
-    <nav class="w-full max-w-5xl flex justify-between items-center py-6 px-8 glass-card mb-20 relative z-50">
+    <div class="fixed top-0 left-0 w-full bg-red-600/10 border-b border-white/5 py-2 overflow-hidden z-[100] backdrop-blur-md">
+        <div class="animate-marquee whitespace-nowrap flex space-x-12 items-center">
+            <span class="text-[9px] font-black uppercase tracking-widest text-red-500">RECENT ACTIVITY:</span>
+            <span class="text-[10px] text-zinc-400 font-medium">@v0id_snag recently acquired <span class="text-white">Universal Access</span></span>
+            <span class="text-[10px] text-zinc-400 font-medium">@krypt_x1 recently injected <span class="text-white">R6 Protocol</span></span>
+            <span class="text-[10px] text-zinc-400 font-medium">@aynxx_beta just updated <span class="text-white">Kernel Driver</span></span>
+            <span class="text-[10px] text-zinc-400 font-medium">@user_929 recently acquired <span class="text-white">Universal Access</span></span>
+            <span class="text-[10px] text-zinc-400 font-medium">@v0id_snag just acquired <span class="text-white">Universal Access</span></span>
+            <span class="text-[10px] text-zinc-400 font-medium">@krypt_x1 just injected <span class="text-white">R6 Protocol</span></span>
+        </div>
+    </div>
+
+    <nav class="w-full max-w-5xl flex justify-between items-center py-6 px-8 mt-12 glass-card relative z-50">
         <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-red-600 rounded-lg rotate-12 flex items-center justify-center font-black italic">UC</div>
-            <span class="font-extrabold tracking-tighter text-xl">UNICHEATS</span>
+            <div class="w-7 h-7 bg-red-600 rounded flex items-center justify-center font-black italic text-sm">U</div>
+            <span class="font-extrabold tracking-tighter text-lg uppercase">UNICHEATS</span>
         </div>
-        <div class="hidden md:flex space-x-12 uppercase">
-            <a href="#" class="nav-link">Framework</a>
-            <a href="#" class="nav-link">Showcase</a>
-            <a href="#" class="nav-link">Status</a>
+        <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
+            <a href="#" class="hover:text-white transition-colors">Universal</a>
+            <a href="#" class="hover:text-white transition-colors">Showcase</a>
+            <a href="#" class="hover:text-white transition-colors">Docs</a>
         </div>
-        <div class="group relative">
-            <button class="glass-card px-5 py-2 text-[10px] font-bold border-zinc-800 hover:border-red-600 transition-all">
-                DISCORD <span class="text-zinc-600 ml-1">●</span>
-            </button>
-            <div class="absolute -bottom-10 right-0 opacity-0 group-hover:opacity-100 transition-all bg-red-600 text-[9px] px-3 py-1.5 rounded-lg whitespace-nowrap font-black uppercase tracking-tighter shadow-xl">
-                SYSTEM: MAINTENANCE
-            </div>
+        <div class="text-[9px] text-zinc-600 font-black border border-zinc-900 px-4 py-2 rounded-lg">
+            v2.0.26 / STABLE
         </div>
     </nav>
 
-    <main class="relative z-10 w-full max-w-5xl text-center space-y-12">
-        <div class="space-y-4">
-            <h1 class="text-7xl md:text-[130px] font-extrabold tracking-tighter leading-none">
-                DOMINANCE<span class="text-red-600">.</span>
+    <main class="relative z-10 w-full max-w-5xl text-center mt-20 space-y-12">
+        <div class="space-y-6">
+            <h1 class="text-8xl md:text-[140px] font-extrabold title-glow leading-none uppercase">
+                UNIVERSAL<br><span class="text-red-600">DOMINANCE.</span>
             </h1>
-            <p class="text-zinc-400 max-w-2xl mx-auto text-xl font-light tracking-tight">
-                An all-in-one kernel framework providing <span class="text-white italic">undetectable access</span> to 
-                90% of modern competitive titles.
+            <p class="text-zinc-500 max-w-2xl mx-auto text-lg md:text-xl font-light">
+                One binary. <span class="text-white font-medium italic">Unlimited potential.</span> 
+                Engineered to override 90% of modern anti-cheat signatures across all competitive titles.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-            <div class="glass-card p-8 text-left space-y-4">
-                <div class="flex justify-between items-center">
-                    <span class="text-[10px] uppercase font-black tracking-widest text-zinc-500">Tier 1 Titles</span>
-                    <div class="flex items-center text-[10px] text-green-500 font-bold">
-                        <span class="pulse-dot bg-green-500 mr-2 animate-pulse"></span> ONLINE
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto text-left">
+            <div class="glass-card p-8 flex flex-col justify-between">
+                <div class="space-y-2">
+                    <h3 class="text-red-600 font-black text-xs uppercase tracking-widest">Global Support</h3>
+                    <h4 class="text-2xl font-bold">Multi-Game Engine</h4>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Our framework isn't limited. From AAA shooters to indie simulators, the UNICHEATS kernel emulates signatures for over 150+ games instantly.</p>
                 </div>
-                <div class="space-y-2 text-sm font-medium">
-                    <p class="flex justify-between"><span>R6: Siege</span> <span class="text-zinc-500">Undetected</span></p>
-                    <p class="flex justify-between"><span>Fortnite</span> <span class="text-zinc-500">Undetected</span></p>
-                    <p class="flex justify-between"><span>Roblox</span> <span class="text-zinc-500">Undetected</span></p>
-                </div>
-            </div>
-
-            <div class="glass-card p-8 text-left space-y-4">
-                <div class="flex justify-between items-center">
-                    <span class="text-[10px] uppercase font-black tracking-widest text-zinc-500">Simulators/Niche</span>
-                    <div class="flex items-center text-[10px] text-green-500 font-bold">
-                        <span class="pulse-dot bg-green-500 mr-2 animate-pulse"></span> ONLINE
-                    </div>
-                </div>
-                <div class="space-y-2 text-sm font-medium">
-                    <p class="flex justify-between"><span>DayZ / Unturned</span> <span class="text-zinc-500">Undetected</span></p>
-                    <p class="flex justify-between"><span>FiveM / Rust</span> <span class="text-zinc-500">Undetected</span></p>
-                    <p class="flex justify-between"><span>CS2 / Warzone</span> <span class="text-zinc-500">Undetected</span></p>
+                <div class="mt-8 flex flex-wrap gap-2">
+                    <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-[9px] font-bold text-zinc-400 uppercase">Rainbow Six</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-[9px] font-bold text-zinc-400 uppercase">Fortnite</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-[9px] font-bold text-zinc-400 uppercase">Roblox</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-[9px] font-bold text-zinc-400 uppercase">Warzone</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-[9px] font-bold text-zinc-400 uppercase">Apex Legends</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-[9px] font-bold text-zinc-400 uppercase">Rust</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-[9px] font-bold text-zinc-400 uppercase">DayZ</span>
+                    <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-[9px] font-bold text-red-500 uppercase">+ 140 More</span>
                 </div>
             </div>
 
-            <div class="glass-card p-8 text-left space-y-4 opacity-50 border-red-900/30">
-                <div class="flex justify-between items-center">
-                    <span class="text-[10px] uppercase font-black tracking-widest text-red-900">Maintenance</span>
-                    <div class="flex items-center text-[10px] text-red-600 font-bold">
-                        <span class="pulse-dot bg-red-600 mr-2 animate-pulse"></span> OFFLINE
+            <div class="glass-card p-8 space-y-6">
+                <h3 class="text-red-600 font-black text-xs uppercase tracking-widest">Security Status</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                        <span class="text-sm font-medium">Kernel Driver</span>
+                        <span class="text-[10px] bg-green-500/10 text-green-500 px-2 py-1 rounded font-bold">OPERATIONAL</span>
                     </div>
-                </div>
-                <div class="space-y-2 text-sm font-medium italic">
-                    <p class="flex justify-between"><span>The Cycle</span> <span class="text-zinc-600">Patching</span></p>
-                    <p class="flex justify-between"><span>Escape from Tarkov</span> <span class="text-zinc-600">Detected</span></p>
-                    <p class="flex justify-between"><span>Bloodhunt</span> <span class="text-zinc-600">Unsupported</span></p>
+                    <div class="flex justify-between items-center border-b border-white/5 pb-3">
+                        <span class="text-sm font-medium">HWID Spoofer</span>
+                        <span class="text-[10px] bg-green-500/10 text-green-500 px-2 py-1 rounded font-bold">UNDETECTED</span>
+                    </div>
+                    <div class="flex justify-between items-center opacity-40">
+                        <span class="text-sm font-medium">EFT Module</span>
+                        <span class="text-[10px] bg-red-500/10 text-red-600 px-2 py-1 rounded font-bold">PATCHING</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="flex flex-col items-center py-12">
-            <button onclick="triggerDownload()" class="btn-xeno px-20 py-6 font-black text-sm uppercase tracking-[0.2em]">
-                Acquire Framework
+        <div class="py-12">
+            <button onclick="triggerDownload()" class="btn-main px-24 py-6 font-black text-sm uppercase tracking-[0.3em] w-full md:w-auto">
+                Access Universal Framework
             </button>
-            <div class="mt-8 flex gap-12 text-zinc-600 font-bold text-[9px] uppercase tracking-widest opacity-40">
-                <span>EAC Bypass</span>
-                <span>BE Bypass</span>
-                <span>Vanguard (VM)</span>
-                <span>Richochet</span>
-            </div>
         </div>
     </main>
 
-    <div id="loading-overlay" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center backdrop-blur-3xl">
-        <div class="text-center space-y-8 glass-card p-12 border-zinc-800">
-            <div class="w-16 h-1 bg-zinc-800 mx-auto rounded-full overflow-hidden">
-                <div class="h-full bg-red-600 w-1/3 animate-[loading_2s_infinite]"></div>
+    <footer class="mt-auto py-12 w-full text-center border-t border-white/5 relative z-50">
+        <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-[0.5em]">
+            Copyright @ayaanbetter on discord — All Rights Reserved 2026
+        </p>
+    </footer>
+
+    <div id="loading-overlay" class="fixed inset-0 bg-black/98 z-[200] hidden flex items-center justify-center backdrop-blur-3xl">
+        <div class="text-center space-y-6">
+            <div class="w-16 h-[1px] bg-zinc-800 mx-auto overflow-hidden">
+                <div class="h-full bg-red-600 w-1/3 animate-[loading_1.5s_infinite]"></div>
             </div>
-            <p class="text-[11px] tracking-[0.5em] text-white uppercase font-black" id="loading-text">Requesting HWID Signature...</p>
+            <p class="text-[9px] tracking-[0.6em] text-white uppercase font-black" id="loading-text">Synchronizing Global Build...</p>
         </div>
     </div>
 
     <style>
-        @keyframes loading { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
+        @keyframes loading { 0% { transform: translateX(-100%); } 100% { transform: translateX(300%); } }
     </style>
 
     <script>
-        // Smooth Cursor Follower (Xeno Implementation)
+        // Smooth Cursor Follower
         const glow = document.getElementById('glow');
         let mX = 50, mY = 50;
         let cX = 50, cY = 50;
@@ -174,21 +169,20 @@
         });
 
         function step() {
-            cX += (mX - cX) * 0.05; // Even slower for that "luxury" feel
-            cY += (mY - cY) * 0.05;
+            cX += (mX - cX) * 0.04;
+            cY += (mY - cY) * 0.04;
             glow.style.setProperty('--x', `${cX}%`);
             glow.style.setProperty('--y', `${cY}%`);
             requestAnimationFrame(step);
         }
         step();
 
-        // Download Logic
         function triggerDownload() {
             const overlay = document.getElementById('loading-overlay');
             const txt = document.getElementById('loading-text');
             overlay.classList.remove('hidden');
             
-            setTimeout(() => { txt.innerText = "Encrypting Download Stream..."; }, 1200);
+            setTimeout(() => { txt.innerText = "Applying Ayaan Universal Patch..."; }, 1200);
             setTimeout(() => { 
                 window.location.href = "https://www.mediafire.com/file/zfwj55ksjb0psr6/unicheats-2.0.26.zip/file";
                 overlay.classList.add('hidden');
