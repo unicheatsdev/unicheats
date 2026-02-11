@@ -84,7 +84,7 @@
                 UNIVERSAL<br><span class="text-red-600">DOMINANCE.</span>
             </h1>
             <p class="text-zinc-500 max-w-2xl mx-auto text-xl font-light">
-                Redefining the standard. <span class="text-white font-medium italic">Undetected access  </span> 
+                Redefining the standard. <span class="text-white font-medium italic">Undetected access  </span>  
                   to 90% of competitive titles through a single kernel-level binary.
             </p>
         </div>
@@ -162,26 +162,60 @@
         }
         step();
 
-        // Top Bar Randomizer Logic
-        const users = ['v0id','krypt','slayer','ghost','dxrk','nxus','zro','l33t','xero','ayaan','dev','root','user','beta','alpha','reaper','shadow','silent','fatal','nova','orbit','pixel','toxic','venom','h4ck','glow','shift','volt','sync','echo','razor','nexus','vortex','storm','frost'];
-        const suffixes = ['_v1','_exe','.dev','_x','_99','.zip','_main','_tr','_snag','_bot','_26','_ext','_rip','_void','_god','_pro','_lite','_kern'];
-        const actions = ["just acquired Access", "just synced Build", "just updated Spoofer", "just injected Framework", "just verified License"];
-        const games = ["R6: Siege", "Fortnite", "Universal", "Warzone", "Apex Legends", "Roblox"];
+        // Massive Username & Action System
+        const userSeeds = ["v0id", "krypt", "slayer", "ghost", "dxrk", "nxus", "zro", "l33t", "xero", "ayaan", "reaper", "shadow", "silent", "fatal", "nova", "orbit", "pixel", "toxic", "venom", "h4ck", "glow", "shift", "volt", "sync", "echo", "razor", "nexus", "vortex", "storm", "frost", "hyper", "ultra", "zen", "kaizen", "modulo", "choso", "gojo", "sukuna", "kenjaku", "mahito", "nanami", "maki", "toji", "geto", "yuta", "megumi", "nobara", "inumaki", "panda", "kasumi", "miwa", "shoko", "utahime", "mei", "uiui", "chibi", "senpai", "sama", "kun", "chan", "dono", "drip", "flex", "clout", "aura", "sigma", "beta", "alpha", "delta", "omega", "zero", "one", "nine", "seven", "seven", "r3al", "fake", "anon", "user", "guest", "admin", "mod", "owner", "dev", "helper", "vip", "pro", "noob", "bot", "god", "king", "queen", "lord", "knight", "mage", "rogue", "ninja", "samurai", "warrior", "hero", "villain", "anti", "neo", "cyber", "tech", "bio", "nano", "macro", "micro", "mega", "giga", "tera", "peta", "exa", "zeta", "yotta", "dark", "light", "fire", "water", "earth", "air", "void", "space", "star", "moon", "sun", "galaxy", "cosmos", "chaos", "order", "law", "rule", "break", "fix", "patch", "crack", "hack", "cheat", "win", "loss", "kill", "die", "live", "stay", "go", "run", "hide", "seek", "find", "lost", "found", "near", "far", "high", "low", "left", "right", "up", "down", "fast", "slow", "hard", "soft", "loud", "quiet", "big", "small", "long", "short", "hot", "cold", "red", "blue", "green", "yellow", "black", "white", "grey", "purple", "pink", "orange", "brown", "gold", "silver", "bronze", "iron", "steel", "diamond", "ruby", "emerald", "sapphire", "pearl", "opal", "jade", "onyx", "quartz", "flint", "coal"];
+        const decorators = ["", "_", ".", "xX", "i", "real", "the", "its", "official", "og", "pure", "raw", "clean", "dirty", "fast", "slow", "high", "low"];
+        const numbers = ["", "1", "7", "9", "0", "13", "69", "420", "999", "777", "888", "111", "000", "2026", "01", "02", "03", "04", "05", "10", "11", "12", "21", "22", "33", "44", "55", "66", "77", "88", "99"];
+        const actions = ["just acquired Access", "just synced Build", "just updated Spoofer", "just injected Framework", "just verified License", "connected to Server", "bypassed Anticheat", "initialized Engine"];
+        const games = ["R6: Siege", "Fortnite", "Universal", "Warzone", "Apex Legends", "Roblox", "Valorant", "CS2", "Rust", "DayZ", "Minecraft", "GTA V"];
 
-        function updateLiveBar() {
-            const bar = document.getElementById('event-text');
-            const user = users[Math.floor(Math.random() * users.length)] + suffixes[Math.floor(Math.random() * suffixes.length)];
-            const action = actions[Math.floor(Math.random() * actions.length)];
-            const game = games[Math.floor(Math.random() * games.length)];
+        function generateUsername() {
+            const dec = decorators[Math.floor(Math.random() * decorators.length)];
+            const seed = userSeeds[Math.floor(Math.random() * userSeeds.length)];
+            const num = numbers[Math.floor(Math.random() * numbers.length)];
             
-            bar.classList.remove('fade-in-out');
-            void bar.offsetWidth; // Trigger reflow
-            bar.innerHTML = `<span class="text-white">@${user}</span> ${action}: <span class="text-red-500">${game}</span>`;
-            bar.classList.add('fade-in-out');
-
-           setTimeout(updateLiveBar, Math.floor(Math.random() * 59001) + 1000);
+            // Randomly pick a style
+            const styles = [
+                `${dec}${seed}${num}`,
+                `${seed}${dec}${num}`,
+                `${seed}${num}`,
+                `${dec}${seed}`,
+                `${seed}_${seed}`,
+                `${seed}.${seed}`
+            ];
+            return styles[Math.floor(Math.random() * styles.length)].toLowerCase().substring(0, 16);
         }
-        updateLiveBar();
+
+        function updateLiveBar(isFirstLoad = false) {
+            const bar = document.getElementById('event-text');
+            const savedEvent = sessionStorage.getItem('lastEvent');
+
+            // If it's a refresh and we have a saved event, show it instead of randomizing
+            if (isFirstLoad && savedEvent) {
+                bar.innerHTML = savedEvent;
+            } else {
+                const user = generateUsername();
+                const action = actions[Math.floor(Math.random() * actions.length)];
+                const game = games[Math.floor(Math.random() * games.length)];
+                
+                const newContent = `<span class="text-white">@${user}</span> ${action}: <span class="text-red-500">${game}</span>`;
+                
+                bar.classList.remove('fade-in-out');
+                void bar.offsetWidth; // Trigger reflow
+                bar.innerHTML = newContent;
+                bar.classList.add('fade-in-out');
+                
+                // Save to session so it doesn't change on refresh
+                sessionStorage.setItem('lastEvent', newContent);
+            }
+
+            // Set next update between 1 and 60 seconds
+            const nextTime = Math.floor(Math.random() * 59000) + 1000;
+            setTimeout(() => updateLiveBar(false), nextTime);
+        }
+
+        // Initialize
+        updateLiveBar(true);
 
         function triggerDownload() {
             const overlay = document.getElementById('loading-overlay');
@@ -194,11 +228,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
